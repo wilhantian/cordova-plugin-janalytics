@@ -1,6 +1,7 @@
 # cordova-plugin-janalytics
 极光的 Cordova 数据统计插件。
-> 此插件包含jcore，当你的APP总使用了不止一个极光服务，请使用`cordova-plugin-janalytics-no-jcore`
+> ~~此插件包含jcore，当你的APP总使用了不止一个极光服务，请使用`cordova-plugin-janalytics-no-jcore`~~
+> 1.0.3版本后，jcore库已经改为弱引用(依赖于cordova-plugin-jcore)，开发者不需担心多个极光插件带来的库文件冲突问题。
 
 ## Install
 - 通过cordova plugin 安装，要求 Cordova CLI 5.0+：
@@ -16,6 +17,12 @@ cordova plugin add https://github.com/wilhantian/cordova-plugin-janalytics --var
 cordova plugin add Your_Plugin_Path  --variable API_KEY=极光KEY --variable CHANNEL=渠道名
 ```
 > 注意: CHANNEL不能为纯数字
+
+## Version Changed
+- 1.0.3
+    将jcore库改为弱引用，开发者不需担心多个极光插件带来的库文件冲突问题
+- 1.0.2
+    解决部分API不能使用的问题
 
 ## Usage
 > - 用例中的'success', 'error'参数代表成功回调函数与失败回调函数.
@@ -82,6 +89,7 @@ Janalytics.onRegisterEvent("手机号注册", true, {a:1, b:2}, function(){}, fu
 ```
 
 - 浏览事件
+``` javascript
   Janalytics.onRegisterEvent(
     browseId, //浏览ID [string]
     browseName,//浏览名 [string]
@@ -90,8 +98,10 @@ Janalytics.onRegisterEvent("手机号注册", true, {a:1, b:2}, function(){}, fu
     extMap,
     success, error
   )
+```
 
 - 购买事件
+``` javascript
   Janalytics.onPurchaseEvent(
     purchaseGoodsid, //商品ID [string]
     purchaseGoodsName, //商品名 [string]
@@ -103,3 +113,4 @@ Janalytics.onRegisterEvent("手机号注册", true, {a:1, b:2}, function(){}, fu
     extMap,
     success, error
   )
+```
