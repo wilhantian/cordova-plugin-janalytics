@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-janalytics" version="1.0.2" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="cordova-plugin-janalytics" version="1.0.3" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>JAnalytics</name>
     <description>JAnalytics for cordova plugin</description>
     <author>WilhanTian</author>
@@ -9,10 +9,7 @@
     <preference name="APP_KEY"/><!--应用ID-->
     <preference name="CHANNEL" default="DEFAULT_CHANNEL"/><!--渠道字符串 注意！禁止为纯数字-->
 
-    <info>
-        Tips: 因极光开发者服务SDK采用了模块化的使用模式，即一个核心（JCore）+N种服务（JPush，JAnalytics，...）的使用方式
-              所以为防止JCore冲突, 当你使用了其他极光服务插件，请使用cordova-plugin-janlytics-no-jcore。
-    </info>
+    <dependency id="cordova-plugin-jcore" version="1.0.0.1"/>
 
     <!--cordova引擎版本限制-->
     <engines>
@@ -57,7 +54,6 @@
         <header-file src="src/ios/libs/JANALYTICSService.h" />
         <header-file src="src/ios/libs/JANALYTICSEventObject.h" />
         <source-file src="src/ios/libs/janalytics-ios-1.0.0.a" framework="true" />
-        <source-file src="src/ios/libs/jcore-ios-1.0.0.a" framework="true" />
         <!--IOS插件源码-->
         <header-file src="src/ios/JAnalytics.h" />
         <source-file src="src/ios/JAnalytics.m" />
@@ -99,16 +95,7 @@
             <meta-data android:name="JPUSH_CHANNEL" android:value="$CHANNEL"/>
 		</config-file>
 
-        <!--二进制库文件-->
-        <source-file src="src/android/libs/arm64-v8a/libjcore100.so" target-dir="libs/arm64-v8a" />
-        <source-file src="src/android/libs/armeabi/libjcore100.so" target-dir="libs/armeabi" />
-        <source-file src="src/android/libs/armeabi-v7a/libjcore100.so" target-dir="libs/armeabi-v7a" />
-        <source-file src="src/android/libs/x86/libjcore100.so" target-dir="libs/x86" />
-        <source-file src="src/android/libs/x86_64/libjcore100.so" target-dir="libs/x86_64" />
-        <source-file src="src/android/libs/mips/libjcore100.so" target-dir="libs/mips" />
-        <source-file src="src/android/libs/mips64/libjcore100.so" target-dir="libs/mips64" />
         <!--jar包-->
-        <source-file src="src/android/libs/jcore-android_v1.0.0.jar" target-dir="libs" />
         <source-file src="src/android/libs/janalytics-android_v1.0.0.jar" target-dir="libs" />
         <!--java源码-->
         <source-file src="src/android/JAnalytics.java" target-dir="src/org/cordova/plugin/janalytics" />

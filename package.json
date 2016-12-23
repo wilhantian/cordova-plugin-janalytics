@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-janalytics",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "JAnalytics for cordova plugin",
   "cordova": {
     "id": "cordova-plugin-janalytics",
