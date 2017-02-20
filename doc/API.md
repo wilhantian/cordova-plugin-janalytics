@@ -1,31 +1,13 @@
-# cordova-plugin-janalytics
-[极光统计](https://www.jiguang.cn/analytics) 的 Cordova 插件。
-
-## Install
-
-本插件依赖 [cordova-plugin-jcore](https://github.com/wilhantian/cordova-plugin-jcore)，该插件随本插件安装时自动安装。
-
-- 通过cordova plugin 安装，要求 Cordova CLI 5.0+：
-``` shell
-cordova plugin add cordova-plugin-janalytics --variable API_KEY=极光appKey --variable CHANNEL=渠道名
-```
-- 或直接通过 url 安装：
-``` shell
-cordova plugin add https://github.com/wilhantian/cordova-plugin-janalytics --variable API_KEY=极光appKey --variable CHANNEL=渠道名
-```
-- 或下载到本地安装：
-``` shell
-cordova plugin add Your_Plugin_Path  --variable API_KEY=极光KEY --variable CHANNEL=渠道名
-```
-> 注意: CHANNEL不能为纯数字
-
 ## API
 > - 用例中的'success', 'error'参数代表成功回调函数与失败回调函数.
+>
 > - extMap为附加参数，仅能纯属一个小于10个字段的1级key-value对象
 >   正确用例：`{ a:1, b:2, c: 3}`
 >   错误用例：`{a: {c: 1, b:2}}`
 >
 >   下面将不再提及
+
+[TOC]
 
 ### 设置是否开启debug模式(开启后将打印更多调试信息)
 Janalytics.setDebugModel(enable, success, error);
@@ -174,6 +156,4 @@ Janalytics.setLocation(latitude, longitude, success, error)
 - error `function`
 
 ## 参考资料
-[极光官方janalytics开发文档](https://docs.jiguang.cn/janalytics/guideline/intro/)
-
-如有bug请提issues, enjoy!
+[极光官方 janalytics 开发文档](https://docs.jiguang.cn/janalytics/guideline/intro/)
