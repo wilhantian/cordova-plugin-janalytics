@@ -1,5 +1,9 @@
 # cordova-plugin-janalytics
 极光的 Cordova 数据统计插件。
+
+# Waring
+## 此插件已交由[极光官方组织](https:github.com/jpush)维护, 不再更新。
+
 > ~~此插件包含jcore，当你的APP总使用了不止一个极光服务，请使用`cordova-plugin-janalytics-no-jcore`~~
 > 1.0.3版本后，jcore库已经改为弱引用(依赖于cordova-plugin-jcore)，开发者不需担心多个极光插件带来的库文件冲突问题。
 
